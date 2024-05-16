@@ -1,0 +1,157 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="UserSide.master.cs" Inherits="UserSide" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style>
+        @font-face {
+            font-family: asusFonts;
+            src: url(assets/fonts/asusFonts.ttf);
+        }
+        *{ 
+            font-family: asusFonts;
+        }
+    </style>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="overflow-x-hidden">
+    <form id="form1" runat="server">
+        <div>
+            <!--Navbar Started-->
+            <nav class="navbar navbar-expand-lg bg-black">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="default.aspx">
+                        <asp:Image ID="Image1" ImageUrl="assets/images/logo.png" Width="150px" Height="80px" runat="server" />
+                        <asp:Label ID="Label1" runat="server" ForeColor="#f3333b" Font-Size="XX-Large" Text="The Asus Store"></asp:Label>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <div class="ms-auto">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <asp:DynamicHyperLink ID="dhl1" runat="server" ForeColor="#f3333b" Font-Size="Large" Text="Home" NavigateUrl="~/default.aspx" CssClass="nav-link"></asp:DynamicHyperLink>
+                            </li>
+                            <li class="nav-item mt-2">
+                                <asp:DropDownList ID="ddl1" runat="server" AutoPostBack="True" ForeColor="#f3333b" Font-Size="Large" BackColor="Black" Height="25px" DataTextField="cat_name" OnSelectedIndexChanged="ddl1_SelectedIndexChanged"></asp:DropDownList>
+                            </li>
+                            <li class="nav-item">
+                                <asp:DynamicHyperLink ID="dhl2" runat="server" ForeColor="#f3333b" Font-Size="Large" Text="About" NavigateUrl="~/about.aspx" CssClass="nav-link"></asp:DynamicHyperLink>
+                            </li>
+                            <li class="nav-item">
+                                <asp:DynamicHyperLink ID="dhl3" runat="server" ForeColor="#f3333b" Font-Size="Large" Text="Contact" NavigateUrl="~/contact.aspx" CssClass="nav-link"></asp:DynamicHyperLink>
+                            </li>
+                            <li class="nav-item">
+                                <asp:DynamicHyperLink ID="dhl5" runat="server" ForeColor="#F3333B" Font-Size="Large" Text="Cart" NavigateUrl="~/cart.aspx" CssClass="nav-link" Visible="False"></asp:DynamicHyperLink>
+                            </li>
+                            <li class="nav-item">
+                                <asp:DynamicHyperLink ID="dhl6" runat="server" ForeColor="#F3333B" Font-Size="Large" Text="Orders" NavigateUrl="~/my_orders.aspx" CssClass="nav-link" Visible="False"></asp:DynamicHyperLink>
+                            </li>
+                            <li class="nav-item">
+                                <asp:DynamicHyperLink ID="dhl4" runat="server" ForeColor="#F3333B" Font-Size="Large" Text="Login" NavigateUrl="~/login.aspx" CssClass="nav-link" Visible="False"></asp:DynamicHyperLink>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <asp:Button ID="btn1" runat="server" ForeColor="#f3333b" Font-Size="Large" Visible="false" data-bs-toggle="dropdown" CssClass="nav-link dropdown-toggle" />
+                                <ul class="dropdown-menu" style="width: 30px">
+                                    <li>
+                                        <asp:Button ID="btn2" runat="server" ForeColor="#f3333b" Font-Size="Medium" Text="Logout" CssClass="dropdown-item" Height="25px" OnClick="btn2_Click" Width="90px" /></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!--Navbar Ended-->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <!--Footer Started-->
+            <footer class="bg-dark text-center text-lg-start text-white mt-3">
+                <!-- Grid container -->
+                <div class="container p-4">
+                    <div class="row text-decoration-none text-white text-center">
+                        <div class="col">
+                            <h6>
+                                <asp:Label ID="Label2" runat="server" CssClass="text-decoration-none" Text="Useful Links"></asp:Label></h6>
+                        </div>
+                        <div class="col">
+                            <h6>
+                                <asp:Label ID="Label3" runat="server" Text="Location"></asp:Label></h6>
+                        </div>
+                        <div class="col">
+                            <h6>
+                                <asp:Label ID="Label4" runat="server" CssClass="text-decoration-none" Text="Contact"></asp:Label></h6>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col">
+                            <h6>
+                                <asp:DynamicHyperLink ID="dhl7" runat="server" Text="Home" NavigateUrl="~/default.aspx" CssClass="text-decoration-none text-white"></asp:DynamicHyperLink></h6>
+                        </div>
+                        <div class="col">
+                            <asp:Label ID="Label5" runat="server" Text="Asus Exclusive Store"></asp:Label></div>
+                        <div class="col">
+                            <asp:Image ID="Image2" runat="server" ImageUrl="~/assets/icons/icons8-facebook-24.png" CssClass="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col">
+                            <h6>
+                                <asp:DynamicHyperLink ID="dhl8" runat="server" Text="Orders" NavigateUrl="~/my_orders.aspx" CssClass="text-decoration-none text-white"></asp:DynamicHyperLink></h6>
+                        </div>
+                        <div class="col">
+                            <asp:Label ID="Label6" runat="server" Text="Jogger's Park"></asp:Label></div>
+                        <div class="col">
+                            <asp:DynamicHyperLink ID="dhl9" runat="server" NavigateUrl="instagram.com">
+                                <asp:Image ID="Image3" runat="server" ImageUrl="~/assets/icons/icons8-instagram-24.png" CssClass="img-fluid" />
+                            </asp:DynamicHyperLink>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col">
+                            <h6>
+                                <asp:DynamicHyperLink ID="dhl10" runat="server" Text="About Us" NavigateUrl="about.aspx" CssClass="text-decoration-none text-white"></asp:DynamicHyperLink></h6>
+                        </div>
+                        <div class="col">
+                            <asp:Label ID="Label7" runat="server" Text="Jamnagar"></asp:Label></div>
+                        <div class="col">
+                            <asp:Image ID="Image4" runat="server" ImageUrl="~/assets/icons/icons8-twitter-squared-24.png" CssClass="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col">
+                            <h6>
+                                <asp:DynamicHyperLink ID="dhl11" runat="server" Text="Contact Us" NavigateUrl="contact.aspx" CssClass="text-decoration-none text-white"></asp:DynamicHyperLink></h6>
+                        </div>
+                        <div class="col">
+                            <asp:DynamicHyperLink ID="dhl12" runat="server" NavigateUrl="https://goo.gl/maps/q2HYn5smEeVFvszKA">
+                                <asp:Image ID="Image5" runat="server" ImageUrl="~/assets/icons/icons8-google-maps-old-24.png" />
+                            </asp:DynamicHyperLink>
+                        </div>
+                        <div class="col">
+                            <asp:DynamicHyperLink ID="dhl13" runat="server" NavigateUrl="http://svettrust.org/">
+                                <asp:Image ID="Image6" runat="server" ImageUrl="~/assets/icons/icons8-google-25.png" CssClass="img-fluid" />
+                            </asp:DynamicHyperLink>
+                        </div>
+                    </div>
+                </div>
+                <!-- Copyright -->
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                    
+                </div>
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                    <asp:Label ID="Label9" runat="server" Text="© 2024 Copyright:"></asp:Label>
+                    <asp:DynamicHyperLink ID="dhl14" runat="server" NavigateUrl="default.aspx" CssClass="text-decoration-none text-white">
+                        <asp:Image ID="Image7" runat="server" ImageUrl="~/assets/images/blank-logo.png" Height="25px" Width="50px" CssClass="img-fluid mx-2" />
+                    </asp:DynamicHyperLink>
+                </div>
+                <!-- Copyright -->
+            </footer>
+            <!--Footer Ended-->
+        </div>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+    </form>
+</body>
+</html>
