@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminPanel.master.cs" Inherits="admin_AdminPanel" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style>
+        @font-face {
+            font-family: asusFonts;
+            src: url(../assets/fonts/asusFonts.ttf);
+        }
+
+        #form1{
+            font-family: Bahnschrift;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../assets/vendor/css/style.css" rel="stylesheet" />
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <header id="header" class="header fixed-top d-flex align-items-center">
+                <div class="d-flex align-items-end justify-content-end">
+                    <asp:DynamicHyperLink ID="dhl1" runat="server" NavigateUrl="~/admin/dashboard.aspx" ForeColor="#f3333b" Font-Underline="false">
+                        <asp:Image ID="Image1" ImageUrl="~/assets/images/blank-logo.png" Width="140px" Height="60px" runat="server" />
+                        <asp:Label ID="Label1" runat="server" ForeColor="#f3333b" Font-Size="X-Large" Text="The Asus Store" CssClass="mt-3"></asp:Label>
+                    </asp:DynamicHyperLink>
+                    <i class="bi bi-list toggle-sidebar-btn"></i>
+                </div>
+                <nav class="header-nav ms-auto">
+                    <ul class="d-flex align-items-center">
+                        <li class="nav-item dropdown">
+                            <asp:Button ID="btn1" runat="server" ForeColor="#f3333b" Font-Size="Large" data-bs-toggle="dropdown" CssClass="nav-link dropdown-toggle" />
+                            <ul class="dropdown-menu">
+                                <li class="w-25">
+                                    <asp:Button ID="btn2" runat="server" ForeColor="#f3333b" Font-Size="Medium" Text="Logout" CssClass="dropdown-item" Height="50px" OnClick="btn2_Click" Width="90px" />
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <aside id="sidebar" class="sidebar">
+                <ul class="sidebar-nav" id="sidebar-nav">
+                    <li class="nav-item">
+                        <asp:DynamicHyperLink ID="dhl2" runat="server" Text="Dashboard" NavigateUrl="~/admin/dashboard.aspx" ForeColor="#f3333b" CssClass="nav-link"></asp:DynamicHyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <asp:DynamicHyperLink ID="dhl3" runat="server" Text="Category Master" NavigateUrl="~/admin/category.aspx" ForeColor="#f3333b" CssClass="nav-link"></asp:DynamicHyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <asp:DynamicHyperLink ID="dhl4" runat="server" Text="Product Master" NavigateUrl="~/admin/product.aspx" ForeColor="#f3333b" CssClass="nav-link"></asp:DynamicHyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <asp:DynamicHyperLink ID="dhl5" runat="server" Text="Order Master" NavigateUrl="~/admin/orders.aspx" ForeColor="#f3333b" CssClass="nav-link"></asp:DynamicHyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <asp:DynamicHyperLink ID="dhl6" runat="server" Text="Contact Master" NavigateUrl="~/admin/contact-req.aspx" ForeColor="#f3333b" CssClass="nav-link"></asp:DynamicHyperLink>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+        <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    </form>
+</body>
+</html>
